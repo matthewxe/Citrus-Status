@@ -18,22 +18,41 @@ Adds emoji status indicators and activity-level solved fractions to the UPD Onli
 ![Screenshot Sample 2](./assets/screenshot_2.png)
 
 ## Install (Developer Mode)
-Instead of getting the extension verified at an official extension store, we
-will install it via developer means.
+Instead of getting the extension verified at an official extension store, we will install it via developer means.
 ### Chrome
 1. Download the `Citrus-Status-master.zip` and extract (or clone the repo).
-2. Go to manage your extensions page (e.g. `chrome://extensions` or
-   `brave://extensions`).
+2. Go to manage your extensions page (e.g. `chrome://extensions` or `brave://extensions`).
 3. Toggle **Developer mode**.
 4. Click **Load unpacked** and select the `Citrus-Status` folder.
 ### Firefox
 1. Download the `Citrus-Status-master.zip` and extract (or clone the repo).
-2. Go to manage your extensions page (e.g. `about:addons`).
+2. Zip the contents of the folder into a new zip file.
+    - So it should look like this
+    ```
+      Citrus-Status-master.zip
+        |- background.js
+        |- manifest.json
+        |- ...
+    ```
+    - And not like this (which was the original zip)
+    ```
+      Citrus-Status-master.zip
+        |- Citrus-Status-master/
+          |- background.js
+          |- manifest.json
+          |- ...
+    ```
+3. Go to `about:config` and set the preference `xpinstall.signatures.required` to `false`
+4. Go to the extensions page (e.g. `about:addons`).
+5. Click the gear icon on the top right and then **Install Add-on From File...**
+6. Select the new zip file that was made and click **Add** on the pop-up.
+### Firefox (Temporary Add-on)
+1. Download the `Citrus-Status-master.zip` and extract (or clone the repo).
+2. Go to the extensions page (i.e. `about:addons`).
 3. Click the gear icon on the top right and then **Debug Add-ons**
 4. Click **Load Temporary Add-on...** and select the `manifest.json` inside the
    `Citrus-Status` folder.
-   > [!NOTE] Because it is a temporary add-on, you would need to add this add-on
-   > every time you reopen Firefox.
-
+> [!NOTE]
+> Because you added it as a temporary add-on, you would need to do this every time you reopen Firefox.
 ## License
 GNU GENERAL PUBLIC LICENSE Version 3
